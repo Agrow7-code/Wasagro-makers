@@ -12,7 +12,9 @@
 - [Flujo Actual del Problema](#-flujo-actual-del-problema)
 - [Statement AI-First](#-statement-ai-first)
 - [Evidencia de Exploración](#-evidencia-de-exploración)
+- [Paisaje Tecnológico y Diferenciación](#-paisaje-tecnológico-y-diferenciación)
 - [Metodologías Aplicadas](#-metodologías-aplicadas)
+- [Referencias](#-referencias)
 - [Deploy](#-deploy)
 
 ---
@@ -35,6 +37,8 @@ Las interfaces tradicionales (formularios, apps con menús desplegables, ERPs) e
 
 Como resultado, la información se captura en **medios analógicos o semi-digitales** (libretas, formatos de Excel descargados para llenar a mano, memoria) o se pierde en **canales no estructurados** (audios informales de WhatsApp), creando una **"oscuridad de datos"** que impide la toma de decisiones en tiempo real.
 
+> **Validación externa**: Diagnósticos de CEPAL, FAO e IICA confirman que, pese a la alta penetración de telefonía móvil, la captura de datos operativos en la agricultura de ALC sigue siendo mayoritariamente analógica, con importantes brechas de uso de soluciones digitales avanzadas, especialmente entre pequeños y medianos productores ([Nagel, CEPAL](https://observatorioecuadordigital.mintel.gob.ec/wp-content/uploads/2022/11/S2013050_en_compressed.pdf); [FAO, 2021](https://openknowledge.fao.org/server/api/core/bitstreams/7043933b-dd27-4674-92ec-4bbfef8a4d48/content); [CEPAL & IICA, 2024](https://agriculturadigital.cepal.org/sites/default/files/2024-08/Digitalization%20in%20the%20agricultural%20sector%20in%20Latin%20America%20and%20the%20Caribbean.pdf)). Un [estudio regional sobre barreras a la agricultura digital](https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1175490/1/AP-Drivers-and-Barriers-2025.pdf) identifica como obstáculos: baja alfabetización digital, interfaces inadecuadas al contexto de campo, y altos costos de adopción.
+
 > **TL;DR**: El campo genera datos. El software los necesita. Pero la interfaz entre ambos está rota. No es un problema de tecnología — es un problema de *fricción de captura*.
 
 ---
@@ -56,9 +60,11 @@ Como resultado, la información se captura en **medios analógicos o semi-digita
 - **Exigencia física constante** — el usuario camina entre 5-15 km diarios recorriendo lotes.
 
 ### Contexto Tecnológico
-- **Alta penetración de smartphones** (Android de gama media-baja) y uso nativo de WhatsApp como canal de coordinación.
-- **Baja alfabetización digital** para software administrativo (SaaS, ERPs, dashboards).
+- **Alta penetración de smartphones** (Android de gama media-baja) y uso nativo de WhatsApp como canal de coordinación. [CEPAL documenta](https://agriculturadigital.cepal.org/sites/default/files/2024-08/Digitalization%20in%20the%20agricultural%20sector%20in%20Latin%20America%20and%20the%20Caribbean.pdf) que en países como El Salvador la penetración de telefonía móvil en hogares agrícolas supera el 90%, pero el uso de apps avanzadas es mucho menor.
+- **Baja alfabetización digital** para software administrativo (SaaS, ERPs, dashboards). [IICA](https://test-assets-opsaa.iica.int/storage/resource/2025/06/c06b2de58547bca98e896f509b111fdc.pdf) profundiza en que, además del acceso, persisten brechas de uso ligadas a educación, edad y tamaño de la explotación.
 - El dato operativo compite con la tarea física: si registrar algo toma más de **30 segundos**, simplemente **no se registra**.
+
+> **Evidencia HCI**: La literatura en factores humanos aplicada a agricultura muestra que interfaces gráficas estándar son poco compatibles con las condiciones reales de trabajo en campo. Sistemas que exigen navegar múltiples pantallas bajo condiciones adversas tienden a ser abandonados ([Scott et al., 2018](https://hcioutdoors.net/wp-content/uploads/2018/03/Scott-interfaces-farm-animals.pdf); [Devitt, 2021](https://arxiv.org/abs/2111.14092)).
 
 ### Restricción Crítica  
 > *"Si registrar un dato me quita más tiempo que hacer la tarea, el dato muere — aunque sea importante."*
@@ -155,6 +161,8 @@ La IA **no es** una herramienta de análisis posterior (un dashboard con gráfic
 - ❌ No reemplaza al humano en la decisión
 - ✅ **Sí define** que la IA debe ser un actor primario (no un feature), actuando como la interfaz entre el humano y el dato
 
+> **Validación externa**: Casos como [FarmLog](https://brioagro.com/es/farmlog-el-primer-cuaderno-de-campo-por-whatsapp-que-facilita-la-vida-a-los-agricultores/), [Cuaderno Campo Digital](https://www.cuadernocampodigital.com/version-escaner-app-movil/) y [Tupl](https://www.tupl.com/solutions/digital-field-journal/) demuestran que ya existen arquitecturas donde la IA actúa como interfaz primaria de ingestión vía WhatsApp. Proyectos como [KissanAI (UNDP)](https://github.com/undpindia/KissanAI_CRA_Chatbot) y [Farmer.Chat](https://arxiv.org/html/2409.08916v2) validan los chatbots agrícolas multimodales. Nuestro enfoque se diferencia en que la IA no asesora sino que **captura y estructura datos operativos** para toma de decisiones, con conciencia de jerga local LATAM y linaje de datos.
+
 ---
 
 ## 🔬 Evidencia de Exploración
@@ -162,14 +170,46 @@ La IA **no es** una herramienta de análisis posterior (un dashboard con gráfic
 Este problema fue identificado y validado a través de la construcción iterativa de **Wasagro**, un sistema operativo para campo agrícola. Durante el desarrollo, se verificó que:
 
 1. **El canal natural es WhatsApp**: Los usuarios ya envían audios, fotos y textos por WhatsApp para coordinarse. La IA debe interceptar ese flujo existente, no crear uno nuevo.
+   - *Validación externa*: [IICA, FAO, CEPAL y RELASER](https://repositorio.iica.int/items/ebd41cc2-25ab-42af-8fa5-ecb1dc5c6265) documentan que WhatsApp se ha convertido en el canal dominante de extensión agrícola en ALC. [CGIAR publicó una guía](https://cgspace.cgiar.org/items/fad1f276-fb9c-4481-a4ca-7a43a4c39025) específica para uso de WhatsApp con productores en Honduras. [CIMMYT reporta](https://idp.cimmyt.org/productores-de-coahuila-usan-whatsapp-para-capacitarse-y-organizarse/) que productores en México migraron a grupos de WhatsApp como su canal principal.
 
 2. **La jerga local es crítica**: Términos como "bombadas", "canecas", "quintales", "al trato", "destajo" no existen en ningún ERP estándar. La IA debe hablar el idioma del campo.
 
 3. **La calidad del input es impredecible**: Fotos borrosas, audios con ruido de maquinaria, textos con errores tipográficos. La IA necesita una "barrera de calidad" y capacidad de pedir re-envío.
+   - *Validación externa*: [Farmer.Chat (arXiv)](https://arxiv.org/html/2409.08916v2) y [KissanAI (UNDP)](https://github.com/undpindia/KissanAI_CRA_Chatbot) documentan capacidades para procesar texto, audios e imágenes para usuarios con baja alfabetización digital.
 
 4. **El dato tiene vida útil corta**: Una plaga reportada 5 días después ya causó daño irreversible. La latencia del flujo actual destruye el valor de la información.
+   - *Validación externa*: Estudios estiman [pérdidas globales de 20-40% por plagas](https://efraproject.eu/enhancing-crop-protection-a-deep-dive-into-yield-threats-precision-pest-management/), y hay [evidencia directa](https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2022.896385/full) de que retrasos en el control de plagas amplifican significativamente el daño. [Investigaciones recientes](https://pubmed.ncbi.nlm.nih.gov/40914792/) muestran que alertas tempranas de plagas se asocian con mejor rendimiento en fincas africanas.
 
 5. **Los roles determinan acceso**: Un trabajador solo reporta; un gerente consulta y decide. La IA debe adaptar su comportamiento según el usuario.
+
+---
+
+## 🌐 Paisaje Tecnológico y Diferenciación
+
+Existen iniciativas emergentes que validan la dirección del enfoque AI-First para captura de datos agrícolas. Al mismo tiempo, revelan brechas que nuestro statement busca cubrir:
+
+| Iniciativa | Qué hace | Enfoque | Brecha que identificamos |
+|---|---|---|---|
+| [**FarmLog** (BrioAgro)](https://brioagro.com/es/farmlog-el-primer-cuaderno-de-campo-por-whatsapp-que-facilita-la-vida-a-los-agricultores/) | Cuaderno de campo digital vía WhatsApp; procesa fotos de facturas y audios | Cumplimiento regulatorio (UE) | Orientado a normativa europea, no a captura operativa en tiempo real para decisiones de campo en LATAM; no maneja jerga local |
+| [**Cuaderno Campo Digital**](https://www.cuadernocampodigital.com/version-escaner-app-movil/) | IA para escanear albaranes/facturas vía email o WhatsApp | Digitalización de documentos contables | Enfocado en facturas/PDFs, no en inputs multimodales caóticos (voz con jerga, fotos de plagas en campo) |
+| [**Tupl**](https://www.tupl.com/solutions/digital-field-journal/) | Digital Field Journal vía WhatsApp + IA | Registro de actividades genérico | Genérico, sin conciencia agro-contextual profunda ni loop activo de clarificación |
+| [**KissanAI**](https://github.com/undpindia/KissanAI_CRA_Chatbot) (UNDP India) | Chatbot WhatsApp multilingüe para agricultura climáticamente resiliente | Asesoría y recomendaciones | Enfocado en dar consejos al productor, no en capturar y estructurar datos operativos para gestión |
+| [**Farmer.Chat**](https://arxiv.org/html/2409.08916v2) | RAG multimodal para asesoría agrícola vía WhatsApp/web | Consulta de conocimiento técnico | Sistema de consulta (Q&A), no de ingestión de datos para bases de datos |
+
+### ¿Dónde nos diferenciamos?
+
+Estas soluciones validan que **WhatsApp + IA es el camino correcto**. Sin embargo, la mayoría se enfoca en:
+- **Asesoría** (dar recomendaciones al productor) o
+- **Cumplimiento regulatorio** (cuadernos de campo para normativa europea)
+
+Nuestro enfoque propone algo distinto: la IA como **agente de ingestión operativa** — no responde preguntas ni cumple normativas, sino que **captura, estructura y almacena la realidad diaria del campo** en tiempo real, con:
+
+- 🌎 **Contexto LATAM**: Jerga local ("bombadas", "destajo", "al trato"), unidades de medida regionales, roles específicos de fincas de exportación
+- 🔄 **Loop activo bidireccional**: La IA no solo recibe — pregunta de vuelta cuando falta contexto crítico
+- 🗄️ **Estructuración para decisión**: El output no es un cuaderno de campo ni un consejo — es un JSON validado en una base de datos, listo para que el gerente tome decisiones
+- 📊 **Linaje de datos**: Distinción explícita entre lo que la IA interpretó (`ai_prediction`) y lo que el humano validó (`final_data`)
+
+> *Referencia*: [Good Agriculture](https://goodagriculture.com/2025/02/11/from-field-notes-to-farm-data-speaking-your-way-to-better-records/) explora la conversión de notas de voz a datos consultables. [Microsoft (Ranveer Chandra)](https://www.youtube.com/watch?v=R81HXrzSUc4) plantea la necesidad de IA multimodal donde agricultores "solo hablan o toman una foto" y la IA interpreta sin apps complejas.
 
 ---
 
@@ -180,6 +220,8 @@ Este problema fue identificado y validado a través de la construcción iterativ
 | **Problem Discovery (Lean)** | Iteración directa con jefes de campo en fincas de banano/cacao. Descubrimiento del problema a través de entrevistas y observación, no suposiciones |
 | **Observación Directa** | Observación del flujo real: libreta → audio WA → Excel semanal. Medición de la latencia real (3-7 días promedio) |
 | **Pensamiento AI-First** | Diseño del rol de la IA como actor primario desde el día 1. La IA no es un "feature" que se agrega después — es la arquitectura base |
+
+> *Alineamiento metodológico*: [IICA y CEPAL](https://test-assets-opsaa.iica.int/storage/resource/2025/06/c06b2de58547bca98e896f509b111fdc.pdf) insisten en que soluciones de agricultura digital deben diseñarse a partir de necesidades reales con co-diseño en campo. La [literatura de smart farming](https://airjournal.org/ajase/journal_article/enhancing-agricultural-productivity-the-impact-of-safety-management-and-human-factors-in-smart-farming-systems/) enfatiza que el diseño centrado en el usuario es tan importante como la tecnología.
 
 ---
 
@@ -201,6 +243,59 @@ cd Wasagro-makers
 # Opción 2: Usar un servidor local
 npx serve .
 ```
+
+---
+
+## 📚 Referencias
+
+Fuentes institucionales, académicas y casos de uso que respaldan las afirmaciones de este documento:
+
+### Brecha digital y datos en agricultura (ALC)
+| Fuente | Descripción |
+|---|---|
+| [CEPAL — Digitalización en el sector agrícola en ALC](https://agriculturadigital.cepal.org/sites/default/files/2024-08/Digitalization%20in%20the%20agricultural%20sector%20in%20Latin%20America%20and%20the%20Caribbean.pdf) | Penetración de móviles vs. uso efectivo de soluciones digitales en hogares agrícolas |
+| [CEPAL — TIC y brecha digital en agricultura (Nagel)](https://observatorioecuadordigital.mintel.gob.ec/wp-content/uploads/2022/11/S2013050_en_compressed.pdf) | Rezago del sector rural en incorporación de TIC; brechas de acceso, uso y adopción |
+| [FAO — Farm data management, sharing and services](https://openknowledge.fao.org/server/api/core/bitstreams/7043933b-dd27-4674-92ec-4bbfef8a4d48/content) | Registros en papel y Excel como norma; errores y retrasos en gestión de datos |
+| [Embrapa — Drivers and Barriers to Digital Agriculture (ALC)](https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1175490/1/AP-Drivers-and-Barriers-2025.pdf) | Baja alfabetización digital, interfaces inadecuadas y costos como barreras |
+| [IICA — Reducción de brecha digital rural (ALC)](https://test-assets-opsaa.iica.int/storage/resource/2025/06/c06b2de58547bca98e896f509b111fdc.pdf) | Brecha de uso y adopción más allá del acceso |
+
+### WhatsApp como canal de extensión agrícola
+| Fuente | Descripción |
+|---|---|
+| [IICA/FAO/CEPAL — Seminario WhatsApp en extensión agrícola](https://repositorio.iica.int/items/ebd41cc2-25ab-42af-8fa5-ecb1dc5c6265) | WhatsApp como canal principal de extensión post-pandemia en ALC |
+| [CGIAR — Guía de WhatsApp con productores (Honduras)](https://cgspace.cgiar.org/items/fad1f276-fb9c-4481-a4ca-7a43a4c39025) | Guía para transmitir información técnica a productores vía WhatsApp |
+| [CIMMYT — Productores de Coahuila usan WhatsApp](https://idp.cimmyt.org/productores-de-coahuila-usan-whatsapp-para-capacitarse-y-organizarse/) | Caso real de migración a WhatsApp para capacitación y coordinación |
+| [Ahire et al. — Role of WhatsApp in Agricultural Technology Transfer](http://rdmodernresearch.org/?edmc=4536) | Productores perciben WhatsApp como canal importante para información técnica |
+
+### Cuadernos de campo digitales y FMIS
+| Fuente | Descripción |
+|---|---|
+| [BrioAgro — FarmLog (cuaderno de campo por WhatsApp)](https://brioagro.com/es/farmlog-el-primer-cuaderno-de-campo-por-whatsapp-que-facilita-la-vida-a-los-agricultores/) | Primer cuaderno de campo digital operado por WhatsApp |
+| [Cuaderno Campo Digital — Versión Escáner + IA](https://www.cuadernocampodigital.com/version-escaner-app-movil/) | IA para captura automática desde imágenes/PDFs |
+| [Tupl — Digital Field Journal via WhatsApp + AI](https://www.tupl.com/solutions/digital-field-journal/) | Chatbot que estructura registros de campo desde WhatsApp |
+| [FarmFit/GIZ — FMIS Guide](https://farmfitinsightshub.org/resources/farm-management-information-systems-fmis) | Migración de papel a digital: eficiencia vs. complejidad de adopción |
+
+### IA y chatbots agrícolas multimodales
+| Fuente | Descripción |
+|---|---|
+| [UNDP/KissanAI — WhatsApp Advisory Chatbot](https://github.com/undpindia/KissanAI_CRA_Chatbot) | Chatbot multilingüe para agricultura climáticamente resiliente |
+| [Farmer.Chat (arXiv)](https://arxiv.org/html/2409.08916v2) | RAG multimodal para asesoría agrícola personalizada |
+| [Good Agriculture — Field Notes to Farm Data](https://goodagriculture.com/2025/02/11/from-field-notes-to-farm-data-speaking-your-way-to-better-records/) | Conversión de notas de voz a datos organizados |
+| [Microsoft — Data Tech's Agricultural Revolution](https://www.youtube.com/watch?v=R81HXrzSUc4) | IA multimodal para datos agrícolas dispersos |
+
+### Factores humanos y HCI en agricultura
+| Fuente | Descripción |
+|---|---|
+| [Scott et al. — Interfaces in Outdoor Computing Contexts](https://hcioutdoors.net/wp-content/uploads/2018/03/Scott-interfaces-farm-animals.pdf) | Incompatibilidad de pantallas táctiles con guantes, suciedad, clima |
+| [Devitt — Cognitive factors in autonomous agriculture adoption](https://arxiv.org/abs/2111.14092) | Abandono de sistemas por sobrecarga cognitiva/operativa |
+| [Smart Farming and Human Factors](https://airjournal.org/ajase/journal_article/enhancing-agricultural-productivity-the-impact-of-safety-management-and-human-factors-in-smart-farming-systems/) | Diseño centrado en usuario como factor crítico de éxito |
+
+### Plagas, latencia y valor del dato fresco
+| Fuente | Descripción |
+|---|---|
+| [FAO/AGRIVI — Crop Protection & Precision Pest Management](https://efraproject.eu/enhancing-crop-protection-a-deep-dive-into-yield-threats-precision-pest-management/) | Pérdidas globales de 20-40% por plagas |
+| [Frontiers — Pest Control Delay effects](https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2022.896385/full) | Impacto negativo de retrasos en control de plagas |
+| [Pest Management Science — Pest alerts and farm performance](https://pubmed.ncbi.nlm.nih.gov/40914792/) | Alertas tempranas = mejor rendimiento en fincas |
 
 ---
 
