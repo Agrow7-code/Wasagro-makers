@@ -267,10 +267,4 @@ Fuentes institucionales, académicas y casos de uso que respaldan las afirmacion
 
 ---
 
-## 📄 Licencia
-
-MIT
-
----
-
 > *Construido como parte del programa **Maker Fellowship — AI-Native** 🚀*
