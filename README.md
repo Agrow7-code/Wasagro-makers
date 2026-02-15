@@ -188,7 +188,7 @@ Este problema fue identificado y validado a través de la construcción iterativ
 Este repositorio incluye una **página interactiva** que visualiza el flujo del problema y el statement AI-first.
 
 ### Ver Online
-👉 [Deploy en Vercel](https://hidden-mare.vercel.app) *(disponible tras deploy)*
+👉 [Deploy en Vercel]([https://hidden-mare.vercel.app](https://wasagro-makers.vercel.app/))
 
 ### Correr Localmente
 ```bash
