@@ -12,7 +12,6 @@
 - [Flujo Actual del Problema](#-flujo-actual-del-problema)
 - [Statement AI-First](#-statement-ai-first)
 - [Evidencia de Exploración](#-evidencia-de-exploración)
-- [Paisaje Tecnológico y Diferenciación](#-paisaje-tecnológico-y-diferenciación)
 - [Metodologías Aplicadas](#-metodologías-aplicadas)
 - [Referencias](#-referencias)
 - [Deploy](#-deploy)
@@ -161,8 +160,6 @@ La IA **no es** una herramienta de análisis posterior (un dashboard con gráfic
 - ❌ No reemplaza al humano en la decisión
 - ✅ **Sí define** que la IA debe ser un actor primario (no un feature), actuando como la interfaz entre el humano y el dato
 
-> **Validación externa**: Casos como [FarmLog](https://brioagro.com/es/farmlog-el-primer-cuaderno-de-campo-por-whatsapp-que-facilita-la-vida-a-los-agricultores/), [Cuaderno Campo Digital](https://www.cuadernocampodigital.com/version-escaner-app-movil/) y [Tupl](https://www.tupl.com/solutions/digital-field-journal/) demuestran que ya existen arquitecturas donde la IA actúa como interfaz primaria de ingestión vía WhatsApp. Proyectos como [KissanAI (UNDP)](https://github.com/undpindia/KissanAI_CRA_Chatbot) y [Farmer.Chat](https://arxiv.org/html/2409.08916v2) validan los chatbots agrícolas multimodales. Nuestro enfoque se diferencia en que la IA no asesora sino que **captura y estructura datos operativos** para toma de decisiones, con conciencia de jerga local LATAM y linaje de datos.
-
 ---
 
 ## 🔬 Evidencia de Exploración
@@ -181,35 +178,6 @@ Este problema fue identificado y validado a través de la construcción iterativ
    - *Validación externa*: Estudios estiman [pérdidas globales de 20-40% por plagas](https://efraproject.eu/enhancing-crop-protection-a-deep-dive-into-yield-threats-precision-pest-management/), y hay [evidencia directa](https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2022.896385/full) de que retrasos en el control de plagas amplifican significativamente el daño. [Investigaciones recientes](https://pubmed.ncbi.nlm.nih.gov/40914792/) muestran que alertas tempranas de plagas se asocian con mejor rendimiento en fincas africanas.
 
 5. **Los roles determinan acceso**: Un trabajador solo reporta; un gerente consulta y decide. La IA debe adaptar su comportamiento según el usuario.
-
----
-
-## 🌐 Paisaje Tecnológico y Diferenciación
-
-Existen iniciativas emergentes que validan la dirección del enfoque AI-First para captura de datos agrícolas. Al mismo tiempo, revelan brechas que nuestro statement busca cubrir:
-
-| Iniciativa | Qué hace | Enfoque | Brecha que identificamos |
-|---|---|---|---|
-| [**FarmLog** (BrioAgro)](https://brioagro.com/es/farmlog-el-primer-cuaderno-de-campo-por-whatsapp-que-facilita-la-vida-a-los-agricultores/) | Cuaderno de campo digital vía WhatsApp; procesa fotos de facturas y audios | Cumplimiento regulatorio (UE) | Orientado a normativa europea, no a captura operativa en tiempo real para decisiones de campo en LATAM; no maneja jerga local |
-| [**Cuaderno Campo Digital**](https://www.cuadernocampodigital.com/version-escaner-app-movil/) | IA para escanear albaranes/facturas vía email o WhatsApp | Digitalización de documentos contables | Enfocado en facturas/PDFs, no en inputs multimodales caóticos (voz con jerga, fotos de plagas en campo) |
-| [**Tupl**](https://www.tupl.com/solutions/digital-field-journal/) | Digital Field Journal vía WhatsApp + IA | Registro de actividades genérico | Genérico, sin conciencia agro-contextual profunda ni loop activo de clarificación |
-| [**KissanAI**](https://github.com/undpindia/KissanAI_CRA_Chatbot) (UNDP India) | Chatbot WhatsApp multilingüe para agricultura climáticamente resiliente | Asesoría y recomendaciones | Enfocado en dar consejos al productor, no en capturar y estructurar datos operativos para gestión |
-| [**Farmer.Chat**](https://arxiv.org/html/2409.08916v2) | RAG multimodal para asesoría agrícola vía WhatsApp/web | Consulta de conocimiento técnico | Sistema de consulta (Q&A), no de ingestión de datos para bases de datos |
-
-### ¿Dónde nos diferenciamos?
-
-Estas soluciones validan que **WhatsApp + IA es el camino correcto**. Sin embargo, la mayoría se enfoca en:
-- **Asesoría** (dar recomendaciones al productor) o
-- **Cumplimiento regulatorio** (cuadernos de campo para normativa europea)
-
-Nuestro enfoque propone algo distinto: la IA como **agente de ingestión operativa** — no responde preguntas ni cumple normativas, sino que **captura, estructura y almacena la realidad diaria del campo** en tiempo real, con:
-
-- 🌎 **Contexto LATAM**: Jerga local ("bombadas", "destajo", "al trato"), unidades de medida regionales, roles específicos de fincas de exportación
-- 🔄 **Loop activo bidireccional**: La IA no solo recibe — pregunta de vuelta cuando falta contexto crítico
-- 🗄️ **Estructuración para decisión**: El output no es un cuaderno de campo ni un consejo — es un JSON validado en una base de datos, listo para que el gerente tome decisiones
-- 📊 **Linaje de datos**: Distinción explícita entre lo que la IA interpretó (`ai_prediction`) y lo que el humano validó (`final_data`)
-
-> *Referencia*: [Good Agriculture](https://goodagriculture.com/2025/02/11/from-field-notes-to-farm-data-speaking-your-way-to-better-records/) explora la conversión de notas de voz a datos consultables. [Microsoft (Ranveer Chandra)](https://www.youtube.com/watch?v=R81HXrzSUc4) plantea la necesidad de IA multimodal donde agricultores "solo hablan o toman una foto" y la IA interpreta sin apps complejas.
 
 ---
 
