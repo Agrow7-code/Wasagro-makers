@@ -188,13 +188,13 @@ Este problema fue identificado y validado a través de la construcción iterativ
 Este repositorio incluye una **página interactiva** que visualiza el flujo del problema y el statement AI-first.
 
 ### Ver Online
-👉 [Deploy en Vercel]([https://hidden-mare.vercel.app](https://wasagro-makers.vercel.app/))
+👉 [Deploy en Vercel](https://wasagro-makers.vercel.app)
 
 ### Correr Localmente
 ```bash
 # Clonar el repositorio
-git clone https://github.com/[tu-usuario]/hidden-mare.git
-cd hidden-mare
+git clone https://github.com/Agrow7-code/Wasagro-makers.git
+cd Wasagro-makers
 
 # Abrir en navegador (es un sitio estático)
 # Opción 1: Doble click en index.html
