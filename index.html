@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fricción de Captura — La Última Milla de Datos Agrícola</title>
+  <meta name="description"
+    content="Definición de problema real y statement AI-first: cómo la IA puede eliminar la fricción de captura de datos en campo agrícola.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Background effects -->
+  <div class="bg-grid"></div>
+  <div class="bg-gradient-orb bg-gradient-orb--green"></div>
+  <div class="bg-gradient-orb bg-gradient-orb--purple"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <div class="nav__brand">
+        <span class="nav__brand-icon">🌱</span>
+        Fricción de Captura
+      </div>
+      <ul class="nav__links">
+        <li><a href="#problema">Problema</a></li>
+        <li><a href="#contexto">Contexto</a></li>
+        <li><a href="#flujo">Flujo</a></li>
+        <li><a href="#statement">AI-First</a></li>
+        <li><a href="#evidencia">Evidencia</a></li>
+      </ul>
+      <span class="nav__badge">Maker Fellowship</span>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="problema">
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__eyebrow">
+          <span class="hero__eyebrow-dot"></span>
+          Reto Producto · Problema Real + AI-First Statement
+        </div>
+        <h1 class="hero__title">
+          La <span class="hero__title-highlight">Fricción de Captura</span> en la Última Milla Agrícola
+        </h1>
+        <p class="hero__subtitle">
+          En fincas de exportación en Latinoamérica, una porción significativa de la información operativa diaria nunca
+          llega a un sistema digital. No es un problema de tecnología — es un problema de <strong>fricción de
+            captura</strong>.
+        </p>
+        <div class="hero__stats">
+          <div>
+            <div class="hero__stat-value">3–7 días</div>
+            <div class="hero__stat-label">Latencia promedio del dato</div>
+          </div>
+          <div>
+            <div class="hero__stat-value">&lt; 30 seg</div>
+            <div class="hero__stat-label">Tiempo máximo que el usuario acepta</div>
+          </div>
+          <div>
+            <div class="hero__stat-value">½ jornada</div>
+            <div class="hero__stat-label">Perdida en transcripción manual</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROBLEMA DETALLADO ===== -->
+  <section id="detalle" class="animate-on-scroll">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">
+          <span class="section-label__line"></span>
+          El problema
+        </div>
+        <h2 class="section-title">¿Por qué el campo no puede usar software?</h2>
+        <p class="section-subtitle">Las interfaces digitales tradicionales están diseñadas para oficinas, no para el
+          barro.</p>
+      </div>
+      <table class="friction-table">
+        <thead>
+          <tr>
+            <th>⛰️ Realidad del campo</th>
+            <th>💻 Lo que exige el software</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Manos sucias, mojadas, con guantes</td>
+            <td>Teclados y selectores pequeños</td>
+          </tr>
+          <tr>
+            <td>Luz solar directa sobre pantalla</td>
+            <td>Lectura precisa de texto en UI</td>
+          </tr>
+          <tr>
+            <td>Movimiento constante entre lotes</td>
+            <td>Interfaces complejas que exigen atención visual sostenida (aún con apps offline, la fricción de llenar
+              formularios persiste)</td>
+          </tr>
+          <tr>
+            <td>Urgencia operativa (30 seg máx)</td>
+            <td>Formularios de 8–15 campos</td>
+          </tr>
+          <tr>
+            <td>Jerga local ("bombadas", "canecas", "qq")</td>
+            <td>Vocabulario estandarizado en UI</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== HIPÓTESIS DE CONTEXTO ===== -->
+  <section id="contexto" class="animate-on-scroll">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">
+          <span class="section-label__line"></span>
+          Hipótesis de usuario y contexto
+        </div>
+        <h2 class="section-title">¿Quién sufre este problema y dónde?</h2>
+        <p class="section-subtitle">Declaramos estas como <strong>hipótesis explícitas</strong>, validadas parcialmente
+          a través de observación directa.</p>
+      </div>
+      <div class="context-grid">
+        <div class="context-card animate-on-scroll delay-1">
+          <div class="context-card__icon">🧑‍🌾</div>
+          <h3 class="context-card__title">Usuario Primario</h3>
+          <p class="context-card__text">El Jefe de Campo (capataz) en fincas de exportación de banano, cacao, café o
+            palma. 30-55 años, experiencia empírica extensa, coordina 5-30 trabajadores diarios. Usa WhatsApp
+            nativamente pero no saben usar apps administrativas complejas.</p>
+          <span class="context-card__tag">Hipótesis validada</span>
+        </div>
+        <div class="context-card animate-on-scroll delay-2">
+          <div class="context-card__icon">🌧️</div>
+          <h3 class="context-card__title">Contexto Físico</h3>
+          <p class="context-card__text">Entorno al aire libre con conectividad intermitente (2G-4G), condiciones
+            climáticas variables, exigencia física constante. El usuario camina 5-15 km diarios recorriendo lotes.</p>
+          <span class="context-card__tag">Observación directa</span>
+        </div>
+        <div class="context-card animate-on-scroll delay-3">
+          <div class="context-card__icon">📱</div>
+          <h3 class="context-card__title">Contexto Tecnológico</h3>
+          <p class="context-card__text">Alta penetración de smartphones Android (gama media-baja). WhatsApp es la
+            herramienta universal de coordinación. Baja alfabetización digital para SaaS y ERPs.</p>
+          <span class="context-card__tag">Hipótesis validada</span>
+        </div>
+        <div class="context-card animate-on-scroll delay-4">
+          <div class="context-card__icon">⏱️</div>
+          <h3 class="context-card__title">Restricción Crítica</h3>
+          <p class="context-card__text"><em>"Si registrar un dato me quita más tiempo que hacer la tarea, el dato muere
+              — aunque sea importante."</em> — El dato operativo compite con la tarea física. Más de 30 segundos = no se
+            registra.</p>
+          <span class="context-card__tag">Evidencia de campo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FLUJO DEL PROBLEMA ===== -->
+  <section id="flujo" class="animate-on-scroll">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">
+          <span class="section-label__line"></span>
+          Flujo del problema
+        </div>
+        <h2 class="section-title">Input → Decisión → Output</h2>
+        <p class="section-subtitle">Compara el flujo actual (con fricción) vs. el flujo donde la IA interviene como
+          actor primario.</p>
+      </div>
+
+      <!-- Toggle -->
+      <div class="flow-toggle">
+        <button class="flow-toggle__btn flow-toggle__btn--red flow-toggle__btn--active" onclick="toggleFlow('current')"
+          id="btn-current">
+          ⚠️ Flujo Actual
+        </button>
+        <button class="flow-toggle__btn" onclick="toggleFlow('proposed')" id="btn-proposed">
+          ✅ Flujo AI-First
+        </button>
+      </div>
+
+      <!-- Current Flow -->
+      <div class="flow-panel flow-panel--active" id="panel-current">
+        <div class="flow-steps flow-steps--current">
+          <div class="flow-step">
+            <div class="flow-step__number flow-step__number--red">①</div>
+            <div class="flow-step__content">
+              <div class="flow-step__title">Evento en Campo</div>
+              <div class="flow-step__desc">El trabajador observa una anomalía o ejecuta una acción durante su jornada.
+              </div>
+              <div class="flow-step__example flow-step__example--red">
+                💬 "Mancha roja en lote 4" · "Aplicamos 20 sacos de urea"
+              </div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step__number flow-step__number--red">②</div>
+            <div class="flow-step__content">
+              <div class="flow-step__title">Captura con Fricción</div>
+              <div class="flow-step__desc">El usuario anota en libreta o en notas de su celular, llena un formato de
+                Excel impreso, o envía audio o texto informal al grupo de WhatsApp. El dato no tiene estructura ni
+                metadatos confiables.</div>
+              <div class="flow-step__example flow-step__example--red">
+                🎤 "Oigan, pilas con el lote 4 que está lleno de cochinilla"
+              </div>
+              <span class="flow-step__tag flow-step__tag--loss">⚠️ Dato no estructurado</span>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step__number flow-step__number--red">③</div>
+            <div class="flow-step__content">
+              <div class="flow-step__title">Latencia — La Brecha</div>
+              <div class="flow-step__desc">Los datos quedan "atrapados" en el papel, en formatos de Excel o en el
+                historial del chat durante 3-7 días, usualmente hasta el reporte semanal.</div>
+              <span class="flow-step__tag flow-step__tag--loss">⚠️ 3-7 días de latencia</span>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step__number flow-step__number--red">④</div>
+            <div class="flow-step__content">
+              <div class="flow-step__title">Transcripción Manual — El Cuello de Botella</div>
+              <div class="flow-step__desc">Un trabajador que aprendió a usar Excel pierde media jornada sentado en
+                oficina para digitalizar datos y reportes en Excel/PowerPoint. Errores de digitación, reportes estáticos
+                que nacen obsoletos.</div>
+              <span class="flow-step__tag flow-step__tag--loss">⚠️ ½ jornada perdida</span>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step__number flow-step__number--red">⑤</div>
+            <div class="flow-step__content">
+              <div class="flow-step__title">Decisión Tardía</div>
+              <div class="flow-step__desc">El jefe o gerente aprueba después de revisar los datos o tras una visita a
+                campo, donde frecuentemente se encuentra con realidades distintas a lo reportado. La brecha entre el
+                dato y la realidad genera decisiones con impacto irreversible en el cultivo.</div>
+              <span class="flow-step__tag flow-step__tag--loss">⚠️ Impacto irreversible</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proposed Flow -->
+      <div class="flow-panel" id="panel-proposed">
+        <div class="flow-steps flow-steps--proposed">
+          <div class="flow-step">
+            <div class="flow-step__number flow-step__number--green">①</div>
+            <div class="flow-step__content">
+              <div class="flow-step__title">Evento en Campo</div>
+              <div class="flow-step__desc">Igual que antes — el trabajador observa o ejecuta. Nada cambia en su
+                operación.</div>
+              <div class="flow-step__example flow-step__example--green">
+                💬 "Mancha roja en lote 4" · "Aplicamos 20 sacos de urea"
+              </div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step__number flow-step__number--green">②</div>
+            <div class="flow-step__content">
+              <div class="flow-step__title">Captura Natural</div>
+              <div class="flow-step__desc">El usuario habla, toma una foto o escribe por WhatsApp — exactamente como ya
+                lo hace. Sin formularios, sin apps nuevas.</div>
+              <div class="flow-step__example flow-step__example--green">
+                🎤 "Oigan, hoy fumigamos el lote 4 con mancozeb, 3 bombadas"
+              </div>
+              <span class="flow-step__tag flow-step__tag--gain">✅ Cero cambio de hábito</span>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step__number flow-step__number--green">③</div>
+            <div class="flow-step__content">
+              <div class="flow-step__title">IA Estructura en Tiempo Real</div>
+              <div class="flow-step__desc">La IA interpreta voz + imagen + texto, extrae entidades (producto, dosis,
+                lote, fecha) y genera un JSON válido para la base de datos. Si falta información, pregunta de vuelta al
+                instante.</div>
+              <div class="flow-step__example flow-step__example--green">
+                🤖 "Registrado: Fumigación con Mancozeb, 3 bombadas en Lote 4. ¿Llovió después?"
+              </div>
+              <span class="flow-step__tag flow-step__tag--gain">✅ Segundos, no días</span>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step__number flow-step__number--green">④</div>
+            <div class="flow-step__content">
+              <div class="flow-step__title">Dato Listo en Base de Datos</div>
+              <div class="flow-step__desc">JSON estructurado se almacena inmediatamente. Sin transcripción manual, sin
+                errores de digitación, con data lineage (predicción IA vs dato final validado).</div>
+              <span class="flow-step__tag flow-step__tag--gain">✅ Cero transcripción</span>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step__number flow-step__number--green">⑤</div>
+            <div class="flow-step__content">
+              <div class="flow-step__title">Decisión en Tiempo Real</div>
+              <div class="flow-step__desc">El Gerente accede a información actualizada al instante. Las decisiones
+                críticas se toman cuando todavía hay oportunidad de actuar.</div>
+              <span class="flow-step__tag flow-step__tag--gain">✅ Decisión oportuna</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATEMENT AI-FIRST ===== -->
+  <section id="statement" class="statement-section animate-on-scroll">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">
+          <span class="section-label__line"></span>
+          Statement AI-First
+        </div>
+        <h2 class="section-title">El Rol Potencial de la IA</h2>
+      </div>
+
+      <div class="statement-box">
+        <p class="statement-quote">
+          En lugar de construir una interfaz gráfica y forzar al humano a estructurar los datos para la máquina, la IA
+          actúa como un <em>Agente Estructurador Inteligente</em> — la interfaz primaria de ingestión ubicada entre el
+          usuario y la base de datos.
+        </p>
+        <p style="color: var(--color-text-dim); font-size: 0.95rem; margin-bottom: var(--space-lg);">
+          La IA <strong>no es</strong> un dashboard de análisis posterior. La IA <strong>es</strong> la interfaz de
+          ingestión activa: un traductor semántico en tiempo real.
+        </p>
+
+        <h3 style="font-size: 1rem; margin-bottom: var(--space-lg); color: var(--color-green-primary);">Capacidades
+          Agénticas Requeridas</h3>
+        <div class="capabilities-grid">
+          <div class="capability-card">
+            <div class="capability-card__icon">🧠</div>
+            <h4 class="capability-card__title">Entendimiento Multimodal</h4>
+            <p class="capability-card__desc">Interpretar voz con jerga local, imágenes no estandarizadas (fotos de
+              libretas, plagas), y contexto temporal/espacial.</p>
+          </div>
+          <div class="capability-card">
+            <div class="capability-card__icon">⚙️</div>
+            <h4 class="capability-card__title">Estructuración Autónoma</h4>
+            <p class="capability-card__desc">Convertir narrativa caótica en entidades de base de datos (JSON) sin
+              pedirle al usuario que llene un formulario.</p>
+          </div>
+          <div class="capability-card">
+            <div class="capability-card__icon">🔄</div>
+            <h4 class="capability-card__title">Loop Humano Activo</h4>
+            <p class="capability-card__desc">Si la info es ambigua, la IA pregunta de vuelta en el momento exacto: "¿En
+              qué lote viste la cochinilla?"</p>
+          </div>
+          <div class="capability-card">
+            <div class="capability-card__icon">🌿</div>
+            <h4 class="capability-card__title">Conciencia Agro-contextual</h4>
+            <p class="capability-card__desc">Saber que si se fumigó y llovió, hay que preguntar si re-aplicaron.
+              Entender que "bombada" es una unidad real.</p>
+          </div>
+        </div>
+
+        <h3
+          style="font-size: 1rem; margin-top: var(--space-2xl); margin-bottom: var(--space-md); color: var(--color-text-dim);">
+          Lo que este statement NO propone</h3>
+        <div class="not-grid">
+          <div class="not-item not-item--no">❌ No propone una solución terminada</div>
+          <div class="not-item not-item--no">❌ No define la tecnología específica</div>
+          <div class="not-item not-item--no">❌ No reemplaza al humano en la decisión</div>
+          <div class="not-item not-item--yes">✅ Sí define a la IA como actor primario, no como feature</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EVIDENCIA ===== -->
+  <section id="evidencia" class="animate-on-scroll">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">
+          <span class="section-label__line"></span>
+          Evidencia de exploración
+        </div>
+        <h2 class="section-title">Validación a través de construcción iterativa</h2>
+        <p class="section-subtitle">Este problema fue identificado construyendo un sistema operativo para campo agrícola
+          en fincas de banano y cacao en Ecuador y Guatemala.</p>
+      </div>
+      <div class="evidence-list">
+        <div class="evidence-item animate-on-scroll delay-1">
+          <div class="evidence-item__number">1</div>
+          <div>
+            <div class="evidence-item__title">El canal natural es WhatsApp</div>
+            <div class="evidence-item__desc">Los usuarios ya envían audios, fotos y textos por WhatsApp para
+              coordinarse. La IA debe interceptar ese flujo existente, no crear uno nuevo.</div>
+          </div>
+        </div>
+        <div class="evidence-item animate-on-scroll delay-2">
+          <div class="evidence-item__number">2</div>
+          <div>
+            <div class="evidence-item__title">La jerga local es crítica</div>
+            <div class="evidence-item__desc">Términos como "bombadas", "canecas", "quintales", "al trato", "destajo" no
+              existen en ningún ERP estándar. La IA debe hablar el idioma del campo.</div>
+          </div>
+        </div>
+        <div class="evidence-item animate-on-scroll delay-3">
+          <div class="evidence-item__number">3</div>
+          <div>
+            <div class="evidence-item__title">La calidad del input es impredecible</div>
+            <div class="evidence-item__desc">Fotos borrosas, audios con ruido de maquinaria, textos con errores. La IA
+              necesita una "barrera de calidad" y capacidad de pedir re-envío.</div>
+          </div>
+        </div>
+        <div class="evidence-item animate-on-scroll delay-4">
+          <div class="evidence-item__number">4</div>
+          <div>
+            <div class="evidence-item__title">El dato tiene vida útil corta</div>
+            <div class="evidence-item__desc">Una plaga reportada 5 días después ya causó daño irreversible. La latencia
+              del flujo actual destruye el valor de la información.</div>
+          </div>
+        </div>
+        <div class="evidence-item animate-on-scroll">
+          <div class="evidence-item__number">5</div>
+          <div>
+            <div class="evidence-item__title">Los roles determinan acceso</div>
+            <div class="evidence-item__desc">Un trabajador solo reporta; un gerente consulta y decide. La IA debe
+              adaptar su comportamiento según el usuario.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== METODOLOGÍAS ===== -->
+  <section class="animate-on-scroll">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">
+          <span class="section-label__line"></span>
+          Metodologías
+        </div>
+        <h2 class="section-title">Cómo se descubrió este problema</h2>
+      </div>
+      <div class="context-grid">
+        <div class="context-card">
+          <div class="context-card__icon">🔍</div>
+          <h3 class="context-card__title">Problem Discovery (Lean)</h3>
+          <p class="context-card__text">Iteración directa con jefes de campo en fincas de banano/cacao. Descubrimiento a
+            través de entrevistas y observación, no suposiciones.</p>
+        </div>
+        <div class="context-card">
+          <div class="context-card__icon">👁️</div>
+          <h3 class="context-card__title">Observación Directa</h3>
+          <p class="context-card__text">Observación del flujo real: libreta → audio WA → Excel semanal. Medición de la
+            latencia real (3-7 días promedio).</p>
+        </div>
+        <div class="context-card">
+          <div class="context-card__icon">🤖</div>
+          <h3 class="context-card__title">Pensamiento AI-First</h3>
+          <p class="context-card__text">Diseño del rol de la IA como actor primario desde el día 1. La IA no es un
+            "feature" que se agrega después — es la arquitectura base.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">
+        Construido como parte del programa <a href="#" class="footer__link">Maker Fellowship — AI-Native</a> 🚀
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // ===== Flow Toggle =====
+    function toggleFlow(view) {
+      const btnCurrent = document.getElementById('btn-current');
+      const btnProposed = document.getElementById('btn-proposed');
+      const panelCurrent = document.getElementById('panel-current');
+      const panelProposed = document.getElementById('panel-proposed');
+
+      if (view === 'current') {
+        btnCurrent.classList.add('flow-toggle__btn--active');
+        btnProposed.classList.remove('flow-toggle__btn--active');
+        panelCurrent.classList.add('flow-panel--active');
+        panelProposed.classList.remove('flow-panel--active');
+      } else {
+        btnProposed.classList.add('flow-toggle__btn--active');
+        btnCurrent.classList.remove('flow-toggle__btn--active');
+        panelProposed.classList.add('flow-panel--active');
+        panelCurrent.classList.remove('flow-panel--active');
+      }
+    }
+
+    // ===== Scroll Animations =====
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+      });
+    });
+
+    // ===== Smooth nav background on scroll =====
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.nav');
+      if (window.scrollY > 50) {
+        nav.style.borderBottomColor = 'rgba(74, 222, 128, 0.1)';
+      } else {
+        nav.style.borderBottomColor = 'rgba(255, 255, 255, 0.06)';
+      }
+    });
+  </script>
+</body>
+
+</html>

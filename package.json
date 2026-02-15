@@ -1,0 +1,11 @@
+{
+  "name": "friccion-de-captura",
+  "version": "1.0.0",
+  "description": "Maker Fellowship — AI-Native: Problema Real + Statement AI-First. La fricción de captura en la última milla agrícola.",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": ["ai-first", "agriculture", "maker-fellowship", "problem-discovery"],
+  "license": "MIT"
+}
