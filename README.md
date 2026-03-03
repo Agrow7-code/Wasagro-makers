@@ -23,7 +23,7 @@
   - [Flujos Validados (Ajustes vs. Semana 1)](#flujos-validados-ajustes-vs-semana-1)
   - [Flujo AI-First Mejorado (Semana 2)](#flujo-ai-first-mejorado-semana-2)
   - [Hipótesis Ajustadas (vs. Semana 1)](#hipótesis-ajustadas-vs-semana-1)
-  - [Decisiones Tomadas](#decisiones-tomadas)
+  - [Registro de Aprendizajes y Decisiones (AI-Light)](#registro-de-aprendizajes-y-decisiones-ai-light)
 
 ---
 
@@ -511,12 +511,35 @@ Wasagro no reemplaza apps de precisión que ya existen (ej. monitoreo Sigatoka),
 | "Necesitamos una app nueva" | ❌ Descartada — Apps nuevas fracasan por fricción de adopción. WhatsApp ES la interfaz |
 | El dato no solo se pierde en papel | ⚠️ Ajustada — También se pierde en audios y chats informales que nadie procesa |
 
-### Decisiones Tomadas
+### Registro de Aprendizajes y Decisiones (AI-Light)
 
-1. **WhatsApp como interfaz única** — No app nueva. Interceptar la comunicación que ya existe.
-2. **Verificación > Digitación** — El valor no es transcribir audios; es verificar que lo que dicen es correcto.
-3. **El trabajador NO es el usuario directo** — El jefe interactúa con el sistema; el trabajador le reporta al jefe.
-4. **ROI en 30 días** — Pitch: "Ya no tienes que sentarte el viernes a pasar datos al Excel."
+#### Aprendizajes clave hasta ahora
+
+1. **El problema central no es "no hay software"**, es que el costo cognitivo de registrar datos es demasiado alto. Hay apps, hay ERPs, hay formularios — pero si registrar un dato toma más de 30 segundos en medio de una jornada física, ese dato muere.
+
+2. **WhatsApp no es solo un canal de comunicación: es el sistema operativo informal de la finca.** Ahí se coordinan labores, se reportan problemas, se envían fotos de plagas y se piden insumos. Cualquier solución que ignore esto y pida instalar una app nueva está condenada.
+
+3. **El dato operativo tiene vida útil muy corta.** Una plaga detectada hoy y reportada en 5 días ya causó daño irreversible. Un error de dosis descubierto al final de la semana ya contaminó el lote. La latencia actual de 3–7 días destruye el valor de la información.
+
+4. **El usuario castiga el mínimo error.** Si la IA inventa un dato, sugiere una dosis incorrecta, o malinterpreta un audio una sola vez, el jefe de campo la rechaza. "Esa pendejada no sirve". Esto nos llevó a pensar en verificación rigurosa y validación contra reglas agronómicas, no solo en prompts bonitos.
+
+5. **El conflicto de quién captura los datos es real.** Cuando el trabajador le dice al jefe por voz, hay interferencia y decodificación imperfecta. Cuando el jefe captura directo, no puede cubrir todos los lotes. La IA debe aceptar ambas rutas y cruzar fuentes.
+
+#### Decisiones tomadas
+
+1. **No construiremos primero un dashboard** — Construiremos primero la capa de ingestión AI-First vía WhatsApp. El dashboard es una consecuencia, no el producto.
+
+2. **No pediremos al usuario que estructure datos en formularios** — La IA será el agente estructurador que interpreta lo que el jefe ya envía (audios, fotos, textos informales) y pregunta solo lo indispensable.
+
+3. **Verificación > Digitación** — El valor real no es transcribir audios a texto; es verificar que lo que dicen es agronómicamente correcto antes de que entre al sistema.
+
+4. **WhatsApp como interfaz única** — No app nueva. Interceptar la comunicación que ya existe.
+
+5. **El trabajador NO es el usuario directo** — El jefe interactúa con el sistema; el trabajador le reporta al jefe como siempre.
+
+6. **ROI demostrable en 30 días** — Pitch: "Ya no tienes que sentarte el viernes a pasar datos al Excel."
+
+7. **Métricas de éxito centradas en captura y precisión**, no en "número de features". Lo que importa: ¿cuántos datos se capturaron?, ¿cuántos pasaron verificación?, ¿cuánto se redujo la latencia?
 
 ---
 
